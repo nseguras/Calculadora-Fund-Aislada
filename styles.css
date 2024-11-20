@@ -1,0 +1,190 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos al inicio y al final del header */
+    align-items: center; /* Centra verticalmente los elementos del header */
+    padding: 10px;
+    background-color: #12b844;
+    color: #fff;
+}
+
+.special-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    max-width: 150px;
+    margin-right: 10px; /* Agregar un margen a la derecha del botón */
+}
+
+.special-button:hover {
+    background-color: #0056b3;
+}
+
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+h1 {
+    margin: 0 auto; /* Centrar horizontalmente el h1 */
+    max-width: 800px; /* Establecer un ancho máximo para el h1 */
+    text-align: center; /* Asegurar que el texto esté centrado */
+}
+
+
+main {
+    padding: 20px;
+}
+
+/* Estilos para el formulario */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 2px;
+}
+
+.Cargas-group {
+    margin-bottom: 10px;
+    background-color: #e4e4e4;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+
+
+.form-group {
+    display: flex; /* Hace que los elementos dentro de .form-group se coloquen en una línea horizontal */
+    align-items: center; /* Centra verticalmente los elementos dentro de .form-group */
+}
+
+.form-group label {
+    margin-right: 10px; /* Añade un espacio entre la etiqueta y el campo de entrada */
+}
+
+
+.form-group {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos dentro de .form-group */
+}
+
+.form-group label {
+    margin-right: 10px;
+    flex: 0 0 150px; /* Ancho fijo para las etiquetas */
+}
+
+.form-group input {
+    flex: 1; /* El campo de entrada ocupa todo el espacio restante */
+}
+
+
+
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.resultados {
+    font-weight: bold;
+}
+
+.resultados > #resultado-volcamiento {
+    color: red; /* Cambia el color del texto a azul */
+}
+
+
+.btn-calculate {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-calculate:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* para incluir el padding en el ancho total */
+}
+
+/* Estilos para los botones */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Evitar que aparezca la barra de desplazamiento vertical */
+
+}
+
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.form-container {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#figure-container {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f9f9f9; /* Solo para visualización */
+}
+
+
