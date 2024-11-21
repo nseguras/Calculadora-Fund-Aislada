@@ -261,3 +261,37 @@ function generarDiagrama() {
       });
     }
   }
+
+
+
+
+
+
+
+
+// script.js
+document.getElementById("fileInput").addEventListener("change", function (event) {
+    const file = event.target.files[0]; // Obtén el archivo
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            const arrayBuffer = reader.result; // Obtén los datos binarios como ArrayBuffer
+            processBinaryFile(arrayBuffer);
+        };
+        reader.readAsArrayBuffer(file); // Lee el archivo como ArrayBuffer
+    }
+});
+
+function processBinaryFile(buffer) {
+    const view = new DataView(buffer); // Usa DataView para leer datos binarios
+    let output = "";
+
+    // Ejemplo: Leer los primeros 10 floats (4 bytes cada uno)
+    for (let i = 0; i < 10; i++) {
+        const value = view.getFloat32(i * 4, true); // Lee un float (little-endian)
+        output += `Valor ${i + 1}: ${value}\n`;
+    }
+
+    // Mostrar el resultado
+    document.getElementById("output").textContent = output;
+}
