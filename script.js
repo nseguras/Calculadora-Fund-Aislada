@@ -268,30 +268,63 @@ function generarDiagrama() {
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leer archivo binario .fil</title>
+</head>
+<body>
+    <h1>Leer archivo .fil (RISA-3D)</h1>
+    
+    <!-- Botón para seleccionar archivo -->
+    <input type="file" id="fileInput" />
+    <!-- Botón para volver a leer el archivo -->
+    <button id="readAgain" disabled>Leer de nuevo</button>
+    
+    <!-- Salida de los datos -->
+    <pre id="output"></pre>
+    
+    <script>
+        let currentFile = null; // Variable global para almacenar el archivo seleccionado
 
-// script.js
-document.getElementById("fileInput").addEventListener("change", function (event) {
-    const file = event.target.files[0]; // Obtén el archivo
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function () {
-            const arrayBuffer = reader.result; // Obtén los datos binarios como ArrayBuffer
-            processBinaryFile(arrayBuffer);
-        };
-        reader.readAsArrayBuffer(file); // Lee el archivo como ArrayBuffer
-    }
-});
+        document.getElementById("fileInput").addEventListener("change", function (event) {
+            currentFile = event.target.files[0]; // Guarda el archivo seleccionado
+            if (currentFile) {
+                readFile(currentFile); // Lee el archivo
+                document.getElementById("readAgain").disabled = false; // Habilita el botón
+            }
+        });
 
-function processBinaryFile(buffer) {
-    const view = new DataView(buffer); // Usa DataView para leer datos binarios
-    let output = "";
+        document.getElementById("readAgain").addEventListener("click", function () {
+            if (currentFile) {
+                readFile(currentFile); // Vuelve a leer el archivo
+            }
+        });
 
-    // Ejemplo: Leer los primeros 10 floats (4 bytes cada uno)
-    for (let i = 0; i < 10; i++) {
-        const value = view.getFloat32(i * 4, true); // Lee un float (little-endian)
-        output += `Valor ${i + 1}: ${value}\n`;
-    }
+        function readFile(file) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const arrayBuffer = reader.result; // Obtén los datos binarios como ArrayBuffer
+                processBinaryFile(arrayBuffer);
+            };
+            reader.readAsArrayBuffer(file); // Lee el archivo como ArrayBuffer
+        }
 
-    // Mostrar el resultado
-    document.getElementById("output").textContent = output;
-}
+        function processBinaryFile(buffer) {
+            const view = new DataView(buffer); // Usa DataView para leer datos binarios
+            let output = "";
+
+            // Ejemplo: Leer los primeros 10 floats (4 bytes cada uno)
+            for (let i = 0; i < 10; i++) {
+                const value = view.getFloat32(i * 4, true); // Lee un float (little-endian)
+                output += `Valor ${i + 1}: ${value}\n`;
+            }
+
+            // Mostrar el resultado
+            document.getElementById("output").textContent = output;
+        }
+    </script>
+</body>
+</html>
