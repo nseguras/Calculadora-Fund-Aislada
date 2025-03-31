@@ -1,0 +1,172 @@
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.containerRE {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.title-sectionRE {
+  background: #003c71;
+  color: #fff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-radius: 30px 30px 0 0;
+  border-bottom: 10px solid #00263a;
+  text-align: center;
+}
+
+.title-sectionRE h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.subtitleRE p {
+  font-size: 1.2em;
+}
+
+/* Estilos de la sección del formulario */
+.form-containerRE {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-containerRE h2 {
+  margin-top: 0;
+  color: #00263a;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* .form-sectionRE {
+  margin-bottom: 15px;
+  border-color: 1px solid #00263a;
+} */
+
+.form-containerRE label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-fields-containerRE input[type='number'],
+.form-fields-containerRE select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  box-sizing: border-box; /* Para que el padding no aumente el ancho */
+  font-size: 1em;
+}
+
+#myButton {
+  margin-top: 10px;
+  background: #003c71;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background 0.3s ease;
+}
+
+#myButton:hover {
+  /* Selector unificado para el hover */
+  background: #5f8fb4;
+}
+
+/* Estilos de la sección de resultados */
+#results-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#results-section h2,
+#results-section h3 {
+  color: #00263a;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+#resultadosGenerales {
+  margin-bottom: 20px;
+}
+
+#resultadosGenerales p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Estilos de la tabla */
+.table-container {
+  overflow-x: auto; /* Para que la tabla sea scrollable en pantallas pequeñas */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+th,
+td {
+  border: 0px solid #ddd;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Media Queries para hacerlo responsivo */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  header {
+    padding-top: 20px;
+  }
+
+  header h1 {
+    font-size: 1.7em;
+  }
+
+  .form-group input[type='number'],
+  .form-group select {
+    font-size: 0.9em;
+  }
+
+  button[type='submit'] {
+    font-size: 1em;
+  }
+
+  #resultadosGenerales p {
+    font-size: 1em;
+  }
+}
